@@ -1,0 +1,83 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["Hi", "Hey", "Hello", "Good day"],
+      "responses": ["Hello! How can I assist you today?", "Hi there! Need help with transport booking?"]
+    },
+    {
+      "tag": "search_transport",
+      "patterns": [
+        "Show available transport from {source} to {destination}",
+        "Find transport between {source} and {destination}",
+        "Show me buses and trains from {source} to {destination}"
+      ],
+      "responses": [
+        "Fetching available transport options from {source} to {destination}...",
+        "Please wait while I check the available trains and buses from {source} to {destination}."
+      ]
+    },
+    {
+      "tag": "show_transport_results",
+      "patterns": [
+        "List available transport from {source} to {destination}",
+        "Available options from {source} to {destination}"
+      ],
+      "responses": [
+        "Here are the available options:\n{transport_list}"
+      ]
+    },
+    {
+      "tag": "ticket_booking",
+      "patterns": [
+        "I want to book a ticket",
+        "Book a train ticket",
+        "Reserve a bus seat",
+        "Book for {transport_name} from {source} to {destination}"
+      ],
+      "responses": [
+        "Sure! Please provide the transport name, transport number, passenger names, ages, number of seats, and travel date."
+      ]
+    },
+    {
+      "tag": "ticket_booking_details",
+      "patterns": [
+        "Book {transport_name} (No: {transport_number}) for {passenger_count} passengers on {date}",
+        "Reserve seat in {transport_name} (No: {transport_number}) for {passenger_count} people on {date}"
+      ],
+      "responses": [
+        "Your booking for {transport_name} (No: {transport_number}) with {passenger_count} passengers on {date} is confirmed. Your booking ID is {booking_id}."
+      ]
+    },
+    {
+      "tag": "ticket_status",
+      "patterns": [
+        "Check status of my booking",
+        "What is the status of my ticket?",
+        "Track my ticket with ID {booking_id}",
+        "What is the status of transport number {transport_number}?"
+      ],
+      "responses": [
+        "Please wait while I check the ticket status for booking ID {booking_id} and transport number {transport_number}."
+      ]
+    },
+    {
+      "tag": "ticket_cancellation",
+      "patterns": [
+        "I want to cancel my ticket",
+        "Cancel booking {booking_id}",
+        "Cancel my reservation",
+        "Cancel transport with number {transport_number}"
+      ],
+      "responses": [
+        "Please confirm cancellation for booking ID {booking_id} and transport number {transport_number}.",
+        "Your cancellation request for booking ID {booking_id} and transport number {transport_number} is being processed."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thank you", "Thanks", "That's helpful"],
+      "responses": ["You're welcome!", "Glad I could help!"]
+    }
+  ]
+}
